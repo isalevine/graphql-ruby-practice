@@ -5,8 +5,8 @@ module Types
     field :price, Float, null: false
     field :transactions, [Types::TransactionType], null: true
 
-    def transactions_count
-      object.transactions.count
-    end
+    # def transactions_count
+    #   object.transactions.count
+    # end
   end
 end
