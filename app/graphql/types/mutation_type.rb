@@ -3,7 +3,7 @@ module Types
 
 
     field :create_purchase, mutation: Mutations::CreatePurchase
-
+    field :create_transaction, mutation: Mutations::CreateTransaction
 
     # # TODO: remove me
     # field :test_field, String, null: false,
