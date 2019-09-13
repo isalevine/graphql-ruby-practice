@@ -1,5 +1,5 @@
 module Types
   class TransactionType < Types::BaseObject
-    field :amount, Integer, null: false
+    field :amount, Float, null: false
   end
 end
