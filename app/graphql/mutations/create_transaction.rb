@@ -1,17 +1,17 @@
 # created per tutorial: https://mattboldt.com/2019/01/07/rails-and-graphql/
 
 class Mutations::CreateTransaction < Mutations::BaseMutation
-    argument :purchase_id, Integer, required: true
+    argument :reference_id, String, required: true
     argument :amount, Float, required: true
 
     field :purchase, Types::PurchaseType, null: false
     field :message, String, null: true
     field :errors, [String], null: false
 
-    def resolve(purchase_id:, amount:)
-        purchase = Purchase.find(purchase_id)
+    def resolve(reference_id:, amount:)
+        purchase = Purchase.find_by(reference_id: reference_id)
         if purchase
-            transaction = Transaction.new(purchase_id: purchase_id, amount: amount)
+            transaction = Transaction.new(purchase_id: purchase.id, amount: amount)
             if transaction.save
                 {
                     purchase: purchase,
