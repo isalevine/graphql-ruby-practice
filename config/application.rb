@@ -33,3 +33,5 @@ module GraphqlApi
     config.api_only = true
   end
 end
+
+require 'securerandom'

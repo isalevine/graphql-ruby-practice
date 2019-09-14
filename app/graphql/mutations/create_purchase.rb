@@ -10,6 +10,7 @@ class Mutations::CreatePurchase < Mutations::BaseMutation
     
     def resolve(username:, price:)
         purchase = Purchase.new(username: username, price: price)
+        purchase.reference_id = SecureRandom.uuid
         if purchase.save
             {
                 purchase: purchase,
