@@ -9,9 +9,9 @@
 Purchase.destroy_all
 Transaction.destroy_all
 
-charlie = Purchase.create(username: "Chawlie", description: "Nite Krawloorz", price: 20.00)
-frank = Purchase.create(username: "Mr. Warthog", description: "Sushi", price: 50.00)
-dennis = Purchase.create(username: "Golden God", description: "Range Rover", price: 40000.00)
+charlie = Purchase.create(username: "Chawlie", description: "Nite Krawloorz", price: 20.00, reference_id: SecureRandom.uuid)
+frank = Purchase.create(username: "Mr. Warthog", description: "Sushi", price: 50.00, reference_id: SecureRandom.uuid)
+dennis = Purchase.create(username: "Golden God", description: "Range Rover", price: 40000.00, reference_id: SecureRandom.uuid)
 
 Transaction.create(purchase_id: charlie.id, amount: 4.25)
 Transaction.create(purchase_id: charlie.id, amount: 0.75)
