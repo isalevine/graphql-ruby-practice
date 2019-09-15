@@ -1,0 +1,2 @@
+class TransactionNote < ApplicationRecord
+end
